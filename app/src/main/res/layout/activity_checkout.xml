@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Checkout">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_main_top">
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TEYVAT FOOD"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/checkout_back"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/main_background"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Order"
+        android:textStyle="bold"
+        android:textSize="23dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/checkout_back"/>
+    <TextView
+        android:id="@+id/checkout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name: account.getInfo.getName"
+        android:textSize="17dp"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/title"/>
+    <TextView
+        android:id="@+id/checkout_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone: account.getInfo.getPhone"
+        android:textSize="17dp"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/checkout_name"/>
+    <TextView
+        android:id="@+id/checkout_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address: account.getAddress.getAll"
+        android:textSize="17dp"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/checkout_phone"/>
+    <TextView
+        android:id="@+id/checkout_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amount: ?"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/checkout_address"/>
+    <TextView
+        android:id="@+id/checkout_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price: ?"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/checkout_amount"/>
+    <Button
+        android:id="@+id/order_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_main_bottom"
+        android:text="Order"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="22dp"/>
+
+
+</RelativeLayout>

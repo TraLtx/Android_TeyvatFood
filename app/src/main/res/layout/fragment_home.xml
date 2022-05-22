@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_gray_background">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="2dp">
+            <EditText
+                android:id="@+id/home_search_filed"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:hint="Search..."
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/bg_search"/>
+            <ImageView
+                android:id="@+id/home_seach_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_search"
+                android:background="@drawable/bg_icon_search"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/banner_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circle_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:ci_drawable="@drawable/bg_circle_indicator"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Category"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray"
+                    android:textSize="23dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_category_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_margin="20dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Suggest"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray"
+                    android:textSize="23dp"/>
+                <ProgressBar
+                    android:id="@+id/suggest_load"
+                    android:layout_width="50dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_suggest_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="20dp">-->
+<!--<LinearLayout-->
+<!--    android:id="@+id/home_liyue"-->
+<!--    android:layout_width="110dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintEnd_toStartOf="@id/home_mondtast"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:background="@drawable/item_white_background">-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/liyue"-->
+<!--        android:layout_gravity="center"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Liyue"-->
+<!--        android:textColor="@color/gray"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginBottom="10dp"/>-->
+<!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/home_mondtast"-->
+<!--    android:layout_width="110dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_marginLeft="2dp"-->
+<!--    android:layout_marginRight="2dp"-->
+<!--    app:layout_constraintStart_toEndOf="@id/home_liyue"-->
+<!--    app:layout_constraintEnd_toStartOf="@id/home_inazuma"-->
+<!--    app:layout_constraintTop_toTopOf="@id/home_liyue"-->
+<!--    android:background="@drawable/item_white_background">-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/mondstadt"-->
+<!--        android:layout_gravity="center"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Mondstast"-->
+<!--        android:textColor="@color/gray"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginBottom="10dp"/>-->
+<!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/home_inazuma"-->
+<!--    android:layout_width="110dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    app:layout_constraintStart_toEndOf="@id/home_mondtast"-->
+<!--    app:layout_constraintTop_toTopOf="@id/home_liyue"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    android:background="@drawable/item_white_background">-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/inazuma"-->
+<!--        android:layout_gravity="center"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Inazuma"-->
+<!--        android:textColor="@color/gray"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginBottom="10dp"/>-->
+<!--</LinearLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="150dp"-->
+<!--android:layout_margin="20dp"-->
+<!--android:background="@drawable/bg_banner">-->
+<!--<ImageView-->
+<!--    android:layout_width="200dp"-->
+<!--    android:layout_height="120dp"-->
+<!--    android:src="@drawable/image_banner"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintLeft_toLeftOf="parent"/>-->
+<!--<TextView-->
+<!--    android:id="@+id/banner_text_1"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:layout_constraintRight_toRightOf="parent"-->
+<!--    android:text="Free Delivery"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:textSize="22dp"-->
+<!--    android:textColor="@color/gray"-->
+<!--    android:textStyle="bold"-->
+<!--    android:layout_marginTop="30dp"-->
+<!--    android:layout_marginRight="10dp"/>-->
+<!--<TextView-->
+<!--    android:id="@+id/banner_text_2"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:layout_constraintRight_toRightOf="@id/banner_text_1"-->
+<!--    android:text="Monday - Friday"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/banner_text_1"-->
+<!--    android:textSize="19dp"-->
+<!--    android:textColor="@color/gray"-->
+<!--    android:textStyle="italic"-->
+<!--    android:layout_marginTop="10dp"/>-->
+<!--<TextView-->
+<!--    android:id="@+id/banner_text_3"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:layout_constraintRight_toRightOf="@id/banner_text_1"-->
+<!--    android:text="Hotline: 093258789"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    android:textSize="16dp"-->
+<!--    android:textColor="@color/gray"-->
+<!--    android:textStyle="italic"-->
+<!--    android:layout_marginBottom="10dp"/>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
